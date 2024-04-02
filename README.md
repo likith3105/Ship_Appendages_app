@@ -8,31 +8,7 @@ This repository contains the code for a full-stack web application built with Re
 Prerequisites
 Node.js and npm for running the React.js frontend.
 Python and pip for running the Flask backend.
-Project Structure
 
-frontend-react-backend-python-flask/
-│
-├── backend/
-│   ├── app.py                # Flask application entry point
-│   ├── requirements.txt      # Python dependencies
-│   ├── ...
-│
-├── frontend/
-│   ├── public/
-│   │   ├── index.html        # Main HTML file
-│   │   ├── styles.css
-│   │
-│   ├── src/
-│   │   ├── components/       # React components
-│   │   ├── App.js            # Main React application component
-│   │   ├── index.js          # Entry point for React application
-│   │   ├── ...
-│   │
-│   ├── package.json          # Node.js dependencies and scripts
-│   ├── ...
-│
-├── README.md                 # Project README file
-└── ...
 Setup Instructions
 Clone the Repository:
 
