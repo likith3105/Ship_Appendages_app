@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training History</title>
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h2 {
+            text-align: center;
+        }
+        .history {
+            margin-top: 20px;
+        }
+        .history table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .history th, .history td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .history th {
+            background-color: #f2f2f2;
+        }
+        .history tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Training History</h2>
+        <div class="history">
+            <h3>ResNet History</h3>
+            <table>
+                <tr>
+                    <th>Epoch</th>
+                    <th>Train Accuracy</th>
+                    <th>Validation Accuracy</th>
+                    <th>Train Loss</th>
+                    <th>Validation Loss</th>
+                </tr>
+                {% for epoch, data in resnet_history.items() %}
+                    <tr>
+                        <td>{{ epoch }}</td>
+                        <td>{{ data.accuracy }}</td>
+                        <td>{{ data.val_accuracy }}</td>
+                        <td>{{ data.loss }}</td>
+                        <td>{{ data.val_loss }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        <div class="history">
+            <h3>VGGNet History</h3>
+            <table>
+                <tr>
+                    <th>Epoch</th>
+                    <th>Train Accuracy</th>
+                    <th>Validation Accuracy</th>
+                    <th>Train Loss</th>
+                    <th>Validation Loss</th>
+                </tr>
+                {% for epoch, data in vggnet_history.items() %}
+                    <tr>
+                        <td>{{ epoch }}</td>
+                        <td>{{ data.accuracy }}</td>
+                        <td>{{ data.val_accuracy }}</td>
+                        <td>{{ data.loss }}</td>
+                        <td>{{ data.val_loss }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        <div class="history">
+            <h3>CNN History</h3>
+            <table>
+                <tr>
+                    <th>Epoch</th>
+                    <th>Train Accuracy</th>
+                    <th>Validation Accuracy</th>
+                    <th>Train Loss</th>
+                    <th>Validation Loss</th>
+                </tr>
+                {% for epoch, data in cnn_history.items() %}
+                    <tr>
+                        <td>{{ epoch }}</td>
+                        <td>{{ data.accuracy }}</td>
+                        <td>{{ data.val_accuracy }}</td>
+                        <td>{{ data.loss }}</td>
+                        <td>{{ data.val_loss }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</body>
+</html>

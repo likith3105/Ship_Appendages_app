@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ship Appendages App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Ship App!</h1>
+        <div class="model-buttons">
+            <button onclick="trainModel('cnn')">CNN</button>
+            <button onclick="trainModel('vggnet')">VGGNet</button>
+            <button onclick="trainModel('resnet')">ResNet</button>
+        </div>
+    </div>
+    <script>
+        function trainModel(model) {
+            fetch('/train/' + model)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log(data); // You can handle the response data here
+                    alert(model + ' training started successfully!');
+                })
+                .catch(error => {
+                    console.error('There was a problem with the fetch operation:', error);
+                    alert('Failed to start training for ' + model);
+                });
+        }
+    </script>
+</body>
+</html>
