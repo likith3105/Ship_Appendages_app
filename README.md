@@ -12,19 +12,20 @@ Python and pip for running the Flask backend.
 Setup Instructions
 Clone the Repository:
 
-git clone https://github.com/your-username/frontend-react-backend-python-flask.git
+git clone https://github.com/likith3105/Ship_Appendages_app.git
 cd frontend-react-backend-python-flask
 Backend Setup:
 
 Navigate to the backend directory:
+
 cd backend
 Install Python dependencies:
 pip install -r requirements.txt
 Run the Flask application:
-bash
-Copy code
 python app.py
+
 Frontend Setup:
+
 Open a new terminal window/tab.
 Navigate to the frontend directory:
 cd ../frontend
